@@ -1,0 +1,31 @@
+{
+  "name": "komunikator",
+  "version": "1.0.0",
+  "description": "chat ",
+  "main": "server.js",
+  "dependencies": {
+    "nedb": "^1.8.0",
+    "querystring": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "localhost:3000",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuzozuo/chat.git"
+  },
+  "keywords": [
+    "chat",
+    "school",
+    "project",
+    "failure"
+  ],
+  "author": "zuzozuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuzozuo/chat/issues"
+  },
+  "homepage": "https://github.com/zuzozuo/chat#readme"
+}

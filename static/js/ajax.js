@@ -1,12 +1,36 @@
-$.ajax({
+function Ajax(){
 
-    url: "http://localhost:3000",
-    data: data,
-    type: "POST",
-    success: function (data) {
-        var obj = JSON.parse(data)
-    },
-    error: function (xhr, status, error) {
-        console.log(xhr);
-    },
-})
+    this.pool = function(send){
+        $.ajax({
+
+            url: "http://localhost:3000/pool",
+            data: send,
+            type: "POST",
+            success: function (data) {
+                parsedData = JSON.parse(data);                
+                ui.appendMsg(parsedData);  
+                oldTimestamp = parsedData[parsedData.length-1].timestamp;                  
+                
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+            },
+        })
+
+    }
+
+    this.sendData = function(send){
+        $.ajax({
+
+            url: "http://localhost:3000/sendMsg",
+            data: send,
+            type: "POST",
+            success: function (data) {  
+                
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+            },
+        })
+    }
+}
