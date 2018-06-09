@@ -3,9 +3,14 @@ function Ui(){
         var messageBox = $("#chatWindow");
 
         for(var i = 0; i < recivedData.length; i++){
-            var text = $('<div class="mesageField">');
-            var hour = $('<span class="hour">' + recivedData[i].date + '</span>');
-            var nick =$('<span class="nick">' + recivedData[i].username + '</span>');
+
+            var r = recivedData[i].r,
+                g = recivedData[i].g,
+                b = recivedData[i].b;
+
+            var text = $('<p class="mesageField">');
+            var hour = $('<span class="hour">[' + recivedData[i].date + ']&nbsp;</span>');
+            var nick =$('<<span style="color: rgb(' + r + ',' + g + ',' + b + ');">@' + recivedData[i].username + '</span>><span>:&nbsp;</span>');
             var messageText = $('<span class="message">' + recivedData[i].message + '</span>');
 
             text.append(hour);
