@@ -19,5 +19,7 @@ function Ui(){
 
             messageBox.append(text);
         }
+
+        $(".message").emoticonize({});
     }
 }

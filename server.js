@@ -49,6 +49,8 @@ function sendMsgToClient(req,res){
 		var finish = qs.parse(allData)
 		var oldTimestamp = parseInt(finish.oldTimestamp);
 
+		db.remove({"timestamp": {$lt: oldTimestamp - 10000}}, {multi: true}, function(err,numRemoved){})
+
 		db.find({"timestamp":{$gt: oldTimestamp}}, function(err, docs){
 			responseToClient = docs;
 			res.end(JSON.stringify(responseToClient)) 			

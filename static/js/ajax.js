@@ -9,7 +9,10 @@ function Ajax(){
             success: function (data) {
                 parsedData = JSON.parse(data);                
                 ui.appendMsg(parsedData);  
-                oldTimestamp = parsedData[parsedData.length-1].timestamp;                  
+                if(parsedData != undefined && parsedData != 0 ){
+                    oldTimestamp = parsedData[parsedData.length-1].timestamp;   
+                }
+                               
                 
             },
             error: function (xhr, status, error) {
